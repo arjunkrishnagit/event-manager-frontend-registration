@@ -1,0 +1,126 @@
+/* You can add global styles to this file, and also import other style files */
+*:not(.fa,.fas) {
+  font-family: Poppins /* Replace with your custom font */, sans-serif !important;
+}
+
+.bluelogicolor{
+  color: #273C88;
+}
+.lighlogicolor{
+  color: #6B7382;
+}
+.form-label-cstm{
+  color: #090908;
+  font-size: 14px;
+  font-weight: 400;
+}
+.form-input-cstm{
+  border: 1px solid #AAB1BF;
+  font-weight: 400;
+}
+.multiselect-dropdown{
+  margin-bottom: 10px;
+}
+textarea:focus, input:focus, .form-control:focus{
+  outline: none;
+  border: 1px solid #AAB1BF !important;
+  box-shadow: none;
+}
+.page-content{
+  background-color: #f8f8fb;
+}
+body {
+  background-color: #f8f8fb;
+}
+.modal-title{
+  color: #273c88;
+  font-weight: 600;
+  font-size: 1.015625rem;
+}
+.modal-close-btn{
+  border: 2px solid #c7c7c7 !important;
+  border-radius: 50% !important;
+  opacity: 2.5 !important;
+}
+.modal-no-btn{
+  --bs-btn-color: #fff !important;
+  --bs-btn-bg: #f46a6a !important;
+  --bs-btn-border-color: #f46a6a !important;
+  --bs-btn-hover-color: #fff!important;
+  --bs-btn-hover-bg: #cf5a5a !important;
+  --bs-btn-hover-border-color: #c35555!important;
+  --bs-btn-focus-shadow-rgb: 246, 128, 128!important;
+  --bs-btn-active-color: #fff!important;
+  --bs-btn-active-bg: #c35555 !important;
+  --bs-btn-active-border-color: #b75050 !important;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125) !important;
+  --bs-btn-disabled-color: #fff !important;
+  --bs-btn-disabled-bg: #f46a6a !important;
+  --bs-btn-disabled-border-color: #f46a6a !important;
+  border-radius: 0.25rem !important;
+  background-color: #f46a6a !important;
+}
+.modal-yes-btn{
+  --bs-btn-color: #fff !important;
+    --bs-btn-bg: #273c88 !important;
+    --bs-btn-border-color: #556ee6 !important;
+    --bs-btn-hover-color: #fff !important;
+    --bs-btn-hover-bg: #485ec4 !important;
+    --bs-btn-hover-border-color: #4458b8 !important;
+    --bs-btn-focus-shadow-rgb: 111, 132, 234 !important;
+    --bs-btn-active-color: #fff !important;
+    --bs-btn-active-bg: #4458b8 !important;
+    --bs-btn-active-border-color: #4053ad !important;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125) !important;
+    --bs-btn-disabled-color: #fff !important;
+    --bs-btn-disabled-bg: #556ee6 !important;
+    --bs-btn-disabled-border-color: #556ee6 !important;
+    border-radius: 0.25rem  !important;
+}
+.modal-content-size{
+  font-size: 1.015625rem;
+}
+.pagination li a{
+  font-size: 0.8125rem;
+}
+
+::-webkit-scrollbar{
+  height: 7px;
+  width: 7px;
+  background: transparent;
+}
+/* Track */
+::-webkit-scrollbar-track {
+background: transparent;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+background: #d3d3d3;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+background: #d3d3d3;
+}
+::-webkit-scrollbar-thumb:horizontal{
+  background: #d3d3d3;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:vertical{
+  background: #d3d3d3;
+  border-radius: 10px;
+}
+.navbar{
+  box-shadow: 0.5px 0.5px 15px #eee;
+}
+.toast-success {
+  background-color: #51a351e3!important;
+}
+.toast-error{
+  background-color:#bd362fdb!important;
+}
+.toast-title{
+  font-size: 16px!important;
+}
+.toast-message{
+  font-size: 0.8125rem!important;
+}

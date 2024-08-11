@@ -1,0 +1,29 @@
+image: node:latest
+
+stages:
+  - build and deploy image
+
+.build:
+  stage: build and deploy image
+  image:
+    name: docker:latest
+  services:
+    - docker:19.03.12-dind
+  variables:
+    DOCKER_REGISTRY: 682844065880.dkr.ecr.ap-south-1.amazonaws.com
+    AWS_DEFAULT_REGION: ap-south-1
+    DOCKER_HOST: tcp://docker:2375
+    DOCKER_TLS_CERTDIR: ""
+
+build and deploy:
+  extends: .build
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH =~ /^dev$/'
+  before_script:
+    - apk add --no-cache curl jq python3 py3-pip
+    - pip install awscli --break-system-packages
+  script:
+    - docker info
+    - docker build -t $DOCKER_REGISTRY/$CI_PROJECT_NAME/dev:$CI_PIPELINE_IID .
+    - aws ecr get-login-password | docker login --username AWS --password-stdin $DOCKER_REGISTRY
+    - docker push $DOCKER_REGISTRY/$CI_PROJECT_NAME/dev:$CI_PIPELINE_IID

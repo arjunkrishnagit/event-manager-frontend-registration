@@ -1,0 +1,91 @@
+<!--start wrapper-->
+<div class="wrapper">
+
+	<!--start content-->
+	<main class="authentication-content">
+		   <div class="row g-0">
+       <div class="col-xl-8 bgimage-div">
+          <!-- <div class="bgimage-div-text">
+            <h5 class="mb-1">
+              Satisfied clients
+            </h5>
+            <p class="bgimage-div-p mb-5">
+              A cutting-edge solution for tracking, enabling seamless monitoring and management of shipments for efficient logistics.
+            </p>
+          </div> -->
+          <div class="w-100">
+            <div class="d-flex h-100 flex-column">
+              <div class="p-4 mt-auto" style="margin-bottom: 24px;">
+                <div class="row justify-content-center">
+                  <!-- <div class="col-lg-12" style="width: 93%;;">
+                    <div class="text-center">
+                      <h4 class="mb-1 font-121875rem">Satisfied clients</h4>
+                      <div dir="ltr">
+                        <div>
+                          <div class="item">
+                            <div class="pb-5 pt-1">
+                              <p class="font-size-16 mb-4">A cutting-edge solution for tracking, enabling seamless monitoring and management of shipments for efficient logistics.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div> -->
+                </div>
+              </div>
+            </div>
+          </div>
+       </div>
+			 <div class="col-xl-4 login-form">
+			   <div class="p-md-5 p-4">
+          <!-- <img src="assets/images/bgimage.jpg" height="43" class="login-logo mb-5" alt="logo icon"> -->
+				  <h4 class="bluelogicolor mb-2 login-welcome">WELCOME!</h4>
+          <p class="text-muted">Sign in to continue</p>
+
+				 <form class="form-body mt-5" [formGroup]="loginForm" (ngSubmit)="logIn()" validateOnSubmit>
+					 <div class="row g-3">
+					   <div class="col-12 mb-3">
+						 <label for="inputEmailAddress" class="form-label ">Email Address</label>
+						 <input type="text" [(ngModel)]="username" class="form-control form-input-cstm" id="inputChoosePassword" placeholder="Enter email address" formControlName="username"
+             [ngClass]="{'ng-invalid-class':(loginValidation && loginForm.controls['username'].invalid)}"
+             >
+					   <span *ngIf="loginValidation && loginForm.controls['username'].invalid && loginForm.controls['username'].errors.required" class="invalidate-text">
+							Please enter email address
+						 </span>
+             <span *ngIf="loginValidation && loginForm.controls['username'].invalid && loginForm.controls['username'].errors.email" class="invalidate-text">
+							Please enter proper email address
+						 </span>
+             </div>
+					   <div class="col-12 mt-0">
+						 <label for="inputChoosePassword" class="form-label ">Password</label>
+						 <div class="pwd">
+             <input [(ngModel)]="password" [type]="hide ? 'password' : 'text'" class="form-control form-input-cstm" id="inputChoosePassword" placeholder="Enter password" formControlName="password"
+             [ngClass]="{'ng-invalid-class':(loginValidation && loginForm.controls['password'].invalid)}"
+             >
+              <span class="p-viewer" (click)="toggleVisibility()">
+                <i class="bi" [ngClass]="{'bi-eye': hide, 'bi-eye-slash-fill': !hide}" aria-hidden="true"></i>
+              </span>
+             </div>
+             <span *ngIf="loginValidation && loginForm.controls['password'].invalid && loginForm.controls['password'].errors.required" class="invalidate-text">
+							Please enter password
+						 </span>
+            </div>
+					   <div class="col-12 mt-5">
+						 <div class="d-grid">
+						   <button type="submit" class="btn btn-primary login-btn" [disabled]="isLoading ? true : false">
+                <span>Log In</span>
+              </button>
+
+						 </div>
+					   </div>
+					 </div>
+				 </form>
+			  </div>
+			 </div>
+		   </div>
+	</main>
+
+	<!--end page main-->
+
+</div>
+<!--end wrapper-->

@@ -1,0 +1,75 @@
+<div *ngIf="!isScanned">
+  <div class="row" >
+    <h5 class="col-sm-6 col-xs-12 pages-title-text mb-4">Scan QR Code</h5>
+  </div>
+
+  <!-- devices -->
+  <!-- <div class="row">
+    <div class="col-xs-12 col-md-6 col-lg-4 col-xl-3 my-1">
+      <select #select1 (change)="action.playDevice(select1.value)" class="form-select form-select-sm">
+        <option [value]="null" selected>Select device</option>
+        <option *ngFor="let c of action.devices.value; let i = index" [value]="c.deviceId" [selected]="i == action.deviceIndexActive">{{c.label}}</option>
+      </select>
+    </div>
+
+    <div class="col-xs-12 col-md-6 col-lg-4 col-xl-3 my-1">
+      <select #select2 (change)="action.decode = select2.value" class="form-select form-select-sm">
+        <option value="utf-8" [selected]="action.decode == 'utf-8'">UTF-8</option>
+        <option value="iso-8859-15" [selected]="action.decode == 'iso-8859-15'">ISO-8859-15</option>
+        <option value="windows-1252" [selected]="action.decode == 'windows-1252'">Windows-1252</option>
+        <option value="macintosh" [selected]="action.decode == 'macintosh'">Macintosh</option>
+      </select>
+    </div>
+  </div> -->
+
+  <!-- ngx-scanner-qrcode -->
+  <div class="w-100 d-flex justify-content-center">
+    <ngx-scanner-qrcode class="scanner-class" #action="scanner" [config]="config" (event)="onEvent($event, action)"></ngx-scanner-qrcode>
+  </div>
+
+  <!-- data  -->
+  <!-- <p class="data">{{ (action.data | async | json) }}</p> -->
+
+  <!-- loading -->
+  <p *ngIf="action.isLoading">⌛ Loading...</p>
+  <div class="w-100 text-center">
+    <!-- start/stop -->
+    <button class="btn m-2" [class.btn-info]="!action.isStart" [class.btn-warning]="action.isStart" [disabled]="action.isLoading" (click)="handle(action, action.isStart ? 'stop' : 'start')">
+      <img [src]="action.isStart ? 'https://id1945.github.io/images/svg/camera-off.svg' : 'https://id1945.github.io/images/svg/camera-on.svg'" width="30px"/>
+    </button>
+
+    <!-- play/pause -->
+    <button class="btn m-2" [class.btn-info]="!action.isStart" [class.btn-warning]="action.isStart" [disabled]="!action.isStart" (click)="handle(action, action.isPause ? 'play' : 'pause')">
+      <img [src]="action.isPause ? 'https://id1945.github.io/images/svg/play.svg': 'https://id1945.github.io/images/svg/pause.svg'" width="30px"/>
+    </button>
+
+    <!-- isTorch -->
+    <button class="btn m-2" [class.btn-info]="!action.isStart" [class.btn-warning]="action.isStart" [disabled]="!action.isStart" (click)="action.isTorch = !action.isTorch; handle(action, 'torcher')">
+      <img [src]="action.isTorch ? 'https://id1945.github.io/images/svg/flash-off.svg' : 'https://id1945.github.io/images/svg/flash-on.svg'" width="30px"/>
+    </button>
+
+    <!-- download -->
+    <button class="btn m-2" [class.btn-info]="!action.isStart" [class.btn-warning]="action.isStart" [disabled]="!action.isStart" (click)="handle(action, 'download')">
+      <img src="https://id1945.github.io/images/svg/capture.svg" width="30px"/>
+    </button>
+  </div>
+
+</div>
+
+<div *ngIf="isScanned">
+  <div class="row" >
+    <h5 class="col-sm-6 col-xs-12 pages-title-text mb-4">Checkin & Checkout</h5>
+  </div>
+  <div>
+    <h5 class="user-details">Name : {{scannedUserData?.name}}</h5>
+    <h5 class="user-details">Status :
+      <span *ngIf="scannedUserData?.check_status==0">Not Checked In</span>
+      <span *ngIf="scannedUserData?.check_status==1">Checked In</span>
+      <span *ngIf="scannedUserData?.check_status==2">checked Out</span>
+    </h5>
+    <button (click)="checkInCheckoutAction(scannedUserData?.id,scannedUserData?.attendeeId,1)"  *ngIf="scannedUserData?.check_status==0 || scannedUserData?.check_status==2" class="btn btn-primary cstmbtn shadow-none" type="button">Check In</button>
+    <button (click)="checkInCheckoutAction(scannedUserData?.id,scannedUserData?.attendeeId,2)" *ngIf="scannedUserData?.check_status==1" class="btn btn-primary cstmbtn shadow-none" type="button">Check Out</button>
+    <br>
+    <button (click)="refreshComponenet();"  class="btn btn-primary cstmbtn shadow-none mt-5" type="button">Scan Another QR Code</button>
+  </div>
+</div>

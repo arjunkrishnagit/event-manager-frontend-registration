@@ -1,0 +1,141 @@
+.login-form{
+  background-color: #F8F8FB;
+}
+.login-welcome{
+  font-weight: 500;
+  font-size: 1.21875rem;
+}
+.login-signin{
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 50px;
+}
+.login-btn{
+  background-color: #273C88;
+  color: white;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  border-radius: 0.25rem;
+  padding: 0.47rem;
+}
+.pwd{
+	position: relative;
+}
+.p-viewer {
+	z-index: 9999;
+	position: absolute;
+	top: 14%;
+	right: 10px;
+  cursor: pointer;
+}
+.bi-eye-slash-fill, .bi-eye {
+	color: #6C8093;
+  font-size: 18px;
+}
+.bg-login-image-div{
+  position: relative;
+  text-align: center;
+  color: white;
+  background-color:#F8F8FB
+}
+.bg-login-text-div {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 85%;
+}
+.bg-login-text-1{
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.bg-login-text-2{
+  font-size: 14px;
+  font-weight: 400;
+}
+@media (max-width: 991px) {
+  .bg-login-text-div{
+    top: 50%;
+  }
+}
+.login-image{
+  height: 100vh;
+  width: 100%;
+  object-fit: cover;
+}
+.text-muted{
+  font-size: 0.8125rem;
+}
+.bgimage-div{
+  background: url("../../../assets/images/bgimage.jpg");
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-attachment: inherit;
+  background-position: center;
+  display: flex;
+  // justify-content: center;
+  color: #fff;
+  background-size: cover;
+}
+.bgimage-div-text{
+  position: fixed;
+  bottom: 70px;
+  color: white;
+  text-align: center;
+}
+.bgimage-div-p{
+  font-size: 16px;
+  max-width: 850px;
+}
+@media screen and (max-width:1199px) {
+	.bgimage-div-text{
+    position: absolute;
+    color: white;
+    text-align: center;
+    top: 29%;
+  }
+  .login-form{
+    z-index: 1;
+  }
+  .bgimage-div{
+    height: 300px;
+  }
+}
+.form-control{
+  display: block;
+  width: 100%;
+  padding: 0.47rem 0.75rem;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  appearance: none;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.form-control::placeholder {
+  color: #495057;
+  opacity: 0.9 !important; /* Firefox */
+}
+.ng-invalid-class{
+  border-color: #f46a6a;
+}
+.invalidate-text{
+  margin-top: 0.25rem;
+  font-size: 80%;
+  color: #f46a6a;
+}
+.ng-invalid-class:focus {
+  box-shadow: inset 0 0 0 0.1px #f46a6a, 0 0 5px 0.1px #f46a6a; // "border" created with a drop shadow plus the focus ring
+  outline: none; // disable default focus styles
+}
+.font-121875rem{
+  font-size: 1.21875rem;
+}
+.font-size-16{
+  font-size: 16px;
+}
