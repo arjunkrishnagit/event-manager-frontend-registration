@@ -52,7 +52,6 @@ import * as $ from 'jquery';
     NgbModule,
     AppRoutingModule,
     SharedModule,
-    // AgmCoreModule.forRoot({apiKey: 'AIzaSyDvFOvaVYiQml7bG29g40bIPHh1EpeZ5Jc'}),
     PerfectScrollbarModule,
     NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
     ToastrModule.forRoot(),
