@@ -1,4 +1,4 @@
-const base_url = "http://localhost:5000";
+const base_url = "https://xesexpo.in/api";
 const base_url_remote_unlock = "";
 // login
 export const login_url = base_url+'/login';
