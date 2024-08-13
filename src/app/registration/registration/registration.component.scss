@@ -70,7 +70,7 @@
 }
 .bgimage-div{
   background: url("../../../assets/images/bgimage.jpg");
-  height: 100vh;
+  min-height: 100vh;
   background-repeat: no-repeat;
   background-attachment: inherit;
   background-position: center;
@@ -100,7 +100,8 @@
     z-index: 1;
   }
   .bgimage-div{
-    height: 300px;
+    height: 300px !important;
+    min-height: 0px;
   }
 }
 .form-control{
@@ -149,4 +150,10 @@
 }
 ::ng-deep .dropdown-list .item2{
   position: relative !important;
+}
+::ng-deep .carousel-control-prev, ::ng-deep .carousel-control-next{
+  display: none !important;
+}
+::ng-deep .carousel-item{
+  text-align: center;
 }

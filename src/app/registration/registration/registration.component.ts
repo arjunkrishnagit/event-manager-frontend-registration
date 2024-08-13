@@ -8,14 +8,20 @@ import { RegistrationService } from '../registration.service'
 import { IDropdownSettings } from 'ng-multiselect-dropdown';
 import { NgxImageCompressService } from 'ngx-image-compress';
 import {eventName} from '../../../../eventEnv'
+import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
+
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
-  styleUrls: ['./registration.component.scss']
+  styleUrls: ['./registration.component.scss'],
+  providers: [NgbCarouselConfig]
 })
 export class RegistrationComponent implements OnInit {
 
-  constructor(private router: Router, private route: ActivatedRoute, private fb: FormBuilder,  private httpClient: HttpClient,private toastr: ToastrService, private ngxUiLoaderService: NgxUiLoaderService, private registrationService: RegistrationService, private imageCompress: NgxImageCompressService) {
+  constructor(private router: Router, private route: ActivatedRoute, private fb: FormBuilder,  private httpClient: HttpClient,private toastr: ToastrService, private ngxUiLoaderService: NgxUiLoaderService, private registrationService: RegistrationService, private imageCompress: NgxImageCompressService, config: NgbCarouselConfig) {
+    config.interval = 2000;
+    config.keyboard = true;
+    config.pauseOnHover = true;
   }
 
   hide = true;
@@ -31,13 +37,14 @@ export class RegistrationComponent implements OnInit {
   uploadFile: File = null;
 
   public dropdownSettingsCountry: IDropdownSettings = {
-    singleSelection: false,
+    singleSelection: true,
     idField: 'item_id',
     textField: 'item_text',
     unSelectAllText: 'UnSelect All',
     itemsShowLimit: 3,
     allowSearchFilter: true,
     limitSelection:1,
+    closeDropDownOnSelection:true
   };
 
   public countryArr: any = [
@@ -60,13 +67,14 @@ export class RegistrationComponent implements OnInit {
   stateDistrictData = '';
 
   public dropdownSettingsState: IDropdownSettings = {
-    singleSelection: false,
+    singleSelection: true,
     idField: 'item_id',
     textField: 'item_text',
     unSelectAllText: 'UnSelect All',
     itemsShowLimit: 3,
     allowSearchFilter: true,
     limitSelection:1,
+    closeDropDownOnSelection:true
   };
   public stateArr: any = [];
   stateSelection = '';
@@ -74,13 +82,14 @@ export class RegistrationComponent implements OnInit {
 
 
 public dropdownSettingsDistrict: IDropdownSettings = {
-    singleSelection: false,
+    singleSelection: true,
     idField: 'item_id',
     textField: 'item_text',
     unSelectAllText: 'UnSelect All',
     itemsShowLimit: 3,
     allowSearchFilter: true,
     limitSelection:1,
+    closeDropDownOnSelection:true
   };
   public districtArr: any = [];
   districtSelection = '';
