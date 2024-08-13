@@ -1,1 +1,1 @@
-export const eventName = 'event1'
+export const eventName = 'BAITRADEEXPO2025'
